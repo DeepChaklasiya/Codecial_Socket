@@ -9,15 +9,15 @@ app.get('/', (req, res) => {
   res.send('Socket is running');
 });
 
-http.listen(PORT, (req, res) => {
-  console.log(`listening on ${PORT}`);
-});
-
-// const io = require('socket.io')(8000, {
-//   cors: {
-//     origin: 'http://localhost:3000',
-//   },
+// http.listen(PORT, (req, res) => {
+//   console.log(`listening on ${PORT}`);
 // });
+
+const io = require('socket.io')(PORT, {
+  cors: {
+    origin: 'https://codecial.netlify.app/',
+  },
+});
 
 let users = [];
 
