@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 app.use(express.static('public'));
 const http = require('http').Server(app);
-const io = require('socket.io')(http);
+// const io = require('socket.io')(http);
 
 app.get('/', (req, res) => {
   res.send('Socket is running');
