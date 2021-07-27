@@ -9,14 +9,14 @@ app.get('/', (req, res) => {
   res.send('Socket is running');
 });
 
-// http.listen(PORT, (req, res) => {
-//   console.log(`listening on ${PORT}`);
-// });
-
 const io = require('socket.io')(PORT, {
   cors: {
     origin: 'https://codecial.netlify.app/',
   },
+});
+
+http.listen(PORT, (req, res) => {
+  console.log(`listening on ${PORT}`);
 });
 
 let users = [];
